@@ -10,4 +10,12 @@ describe('Hello', function() {
       });
     });
   });
+  describe('hello', function() {
+    it('should return hello world', function() {
+      Hello.hello()
+      .then(result => {
+        assert.equal('hello world', result);
+      });
+    });
+  });
 });
