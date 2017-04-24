@@ -1,11 +1,17 @@
-const getWorld = () => new Promise((resolve) => {
-  setTimeout(() => resolve(' world'), 500);
-});
+class Hello {
+  static getWorld() {
+    return new Promise((resolve) => {
+      setTimeout(() => resolve(' world'), 500);
+    });
+  }
 
-const hello = () => new Promise((resolve) => {
-  getWorld().then(result => {
-    resolve('hello' + result);
-  });
-});
+  static hello() {
+    return new Promise((resolve) => {
+      this.getWorld().then(result => {
+        resolve('hello' + result);
+      });
+    });
+  }
+}
 
-export default hello;
+export default Hello;

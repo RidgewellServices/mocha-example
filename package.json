@@ -6,7 +6,7 @@
   "scripts": {
     "build": "babel src -d dist",
     "start": "node dist/index",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --compilers js:babel-core/register test/*_test.js"
   },
   "keywords": [],
   "author": "",
