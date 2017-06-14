@@ -6,9 +6,12 @@ class Hello {
   }
 
   static hello() {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
       this.getWorld().then(result => {
         resolve('hello' + result);
+      })
+      .catch(err => {
+        reject(err);
       });
     });
   }
